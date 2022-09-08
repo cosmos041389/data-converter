@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>데이터 단위 변환기</title>
+
+    <div id="userCss">
+      <link rel="stylesheet" href="./style.css"/>
+    </div>
+
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="convertMiB.js"></script>
+    <script type="text/javascript" src="convertMB.js"></script>
+
+    <!--bootstrap-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    <link href="./bootstrap-5.2.0-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <div id="fonts">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    </div>
+  </head>
+
+  <body>
+    <!--header-->
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" id="header">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <span class="fs-4">COSMOS</span>
+        </a>
+
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="." class="nav-link active" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="./updates.html" class="nav-link">Updates</a></li>
+        </ul>
+      </header>
+    </div>
+
+    <!--user content-->
+    <div class="container" id="grid">
+
+      <div class="item" id="converter">
+        <p style="font-size:25px;">데이터 단위 변환</p>
+        <input type="text" name="" value="" id="input"  style="text-align:right" onKeyup="printResultMB(); printResultMiB()">
+        <select class="" name="" id="mode" onchange="printResultMB(); printResultMiB()">
+          <option value="0.125">Bit</option>
+          <option value="1">Byte</option>
+          <option value="1000">KB</option>
+          <option value="1000000">MB</option>
+          <option value="1000000000">GB</option>
+          <option value="1000000000000">TB</option>
+          <option value="1000000000000000">PB</option>
+          <option value="100000000000000000">EB</option>
+          <option value="1000000000000000000">ZB</option>
+          <option value="1000000000000000000000">YB</option>
+          <option value="1024">KiB</option>
+          <option value="1048576">MiB</option>
+          <option value="1073741824">GiB</option>
+          <option value="1099511627776">TiB</option>
+          <option value="1125899906842624">PiB</option>
+          <option value="1152921504606846976">EiB</option>
+          <option value="1180591620717411303424">ZiB</option>
+          <option value="1208925819614629174706176">YiB</option>
+        </select>
+      </div>
+
+      <div class="item" id="mb">
+        <table id="mbtable" cellspacing="2" cellpadding="2">
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">Bit</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">Byte</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">KB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">MB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">GB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">TB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">PB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">EB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">ZB</td></tr>
+            <tr class="mbrow"><td class="mbresult" width="90%" height=30px></td><td class="mbunit" width="10%">YB</td></tr>
+        </table>
+      </div>
+
+
+      <div class="item" id="mib">
+        <table id="mibtable"  cellspacing="2" cellpadding="2">
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">KiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">MiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">GiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">TiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">PiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">EiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">ZiB</td></tr>
+          <tr class="mibrow"><td class="mibresult" width="90%"></td><td class="mibunit" width="10%">YiB</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!--footer-->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footer">
+        <p class="col-md-4 mb-0 text-muted">Made By cosmos041389</p>
+
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <!--ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul-->
+      </footer>
+    </div>
+  </body>
+</html>
